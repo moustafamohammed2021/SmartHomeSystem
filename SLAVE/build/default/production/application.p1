@@ -1,0 +1,1145 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"25 ./ECU_LAYER/led/ecu_led.h
+[; ;./ECU_LAYER/led/ecu_led.h: 25: typedef struct {
+[s S274 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S274 . port pin status ]
+"33 ./application.h
+[; ;./application.h: 33: led_t Room1_Led={.port=PORTD_INDEX,.pin=GPIO_PIN0,.status=LED_OFF};
+[c E2983 0 1 2 3 4 .. ]
+[n E2983 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E2973 0 1 2 3 4 5 6 7 .. ]
+[n E2973 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
+[c E3027 0 1 .. ]
+[n E3027 . LED_OFF LED_ON  ]
+[v F3167 `(v ~T0 @X0 0 tf ]
+"68 ./MCAL_LAYER/SPI/hal_spi.h
+[; ;./MCAL_LAYER/SPI/hal_spi.h: 68: typedef struct {
+[s S277 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S277 . clock_polarity clock_phase sampling_receiving SPI_interrupt_enable reserved_bits ]
+"76
+[; ;./MCAL_LAYER/SPI/hal_spi.h: 76: typedef struct {
+[s S278 `*F3167 1 `uc 1 `S277 1 ]
+[n S278 . SPI_InterruptHandler SPI_mode SPI_config ]
+"23 ./application.h
+[; ;./application.h: 23: void SPI_InterrutHandler(void);
+[v _SPI_InterrutHandler `(v ~T0 @X0 0 ef ]
+"41
+[; ;./application.h: 41: SPI_Config_t SPIObject={.SPI_InterruptHandler=SPI_InterrutHandler,.SPI_mode=SPI_SLAVE_MODE_SS_BIN_ENABLED,
+[c E3150 0 1 2 3 4 5 .. ]
+[n E3150 . SPI_MASTER_MODE_CLOCK_FOSC_DIV_4 SPI_MASTER_MODE_CLOCK_FOSC_DIV_16 SPI_MASTER_MODE_CLOCK_FOSC_DIV_64 SPI_MASTER_MODE_CLOCK_TIMR2_DIV_2 SPI_SLAVE_MODE_SS_BIN_ENABLED SPI_SLAVE_MODE_SS_BIN_DISABLED  ]
+[v F3187 `(v ~T0 @X0 0 tf ]
+"71 ./MCAL_LAYER/TIMER1/hal_timer1.h
+[; ;./MCAL_LAYER/TIMER1/hal_timer1.h: 71: typedef struct {
+[s S279 `*F3187 1 `us 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
+[n S279 . TIMER1_HandlerInterrupt preloaded_value timer1_pre_scaler_val timer1_mode_timer_or_counter timer1_counter_mode_sync timer1_oscillator_enable timer1_mode_wr_reg preserved_bits ]
+"21 ./application.h
+[; ;./application.h: 21: void Timer1Handler(void);
+[v _Timer1Handler `(v ~T0 @X0 0 ef ]
+[v F3084 `(v ~T0 @X0 0 tf ]
+"55
+[; ;./application.h: 55: adc_config_t ADC_Obj={.ADC_HandlerInterrupt=((void*)0),.adc_channel=ADC_CHANNEL_AN0,
+[c E3048 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E3048 . ADC_CHANNEL_AN0 ADC_CHANNEL_AN1 ADC_CHANNEL_AN2 ADC_CHANNEL_AN3 ADC_CHANNEL_AN4 ADC_CHANNEL_AN5 ADC_CHANNEL_AN6 ADC_CHANNEL_AN7 ADC_CHANNEL_AN8 ADC_CHANNEL_AN9 ADC_CHANNEL_AN10 ADC_CHANNEL_AN11 ADC_CHANNEL_AN12  ]
+[c E3063 0 1 2 3 4 5 6 7 .. ]
+[n E3063 . ADC_0_TAD ADC_2_TAD ADC_4_TAD ADC_6_TAD ADC_8_TAD ADC_12_TAD ADC_16_TAD ADC_20_TAD  ]
+[c E3073 0 1 2 3 4 5 6 .. ]
+[n E3073 . ADC_CONVERSION_CLOCK_FOSC_DIV_2 ADC_CONVERSION_CLOCK_FOSC_DIV_8 ADC_CONVERSION_CLOCK_FOSC_DIV_32 ADC_CONVERSION_CLOCK_FOSC_DIV_FRC ADC_CONVERSION_CLOCK_FOSC_DIV_4 ADC_CONVERSION_CLOCK_FOSC_DIV_16 ADC_CONVERSION_CLOCK_FOSC_DIV_64  ]
+"138 ./MCAL_LAYER/ADC/hal_adc.h
+[; ;./MCAL_LAYER/ADC/hal_adc.h: 138: typedef struct {
+[s S275 `*F3084 1 `E3048 1 `E3063 1 `E3073 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
+[n S275 . ADC_HandlerInterrupt adc_channel adc_time_conversion adc_clock_freq volatge_reference result_format pins_reserved ]
+[v F3220 `(v ~T0 @X0 0 tf ]
+[p mainexit ]
+"4451 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
+[s S170 :4 `uc 1 :2 `uc 1 ]
+[n S170 . PCFG VCFG ]
+"4455
+[s S171 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S171 . PCFG0 PCFG1 PCFG2 PCFG3 VCFG0 VCFG1 ]
+"4463
+[s S172 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S172 . . CHSN3 VCFG01 VCFG11 ]
+"4450
+[u S169 `S170 1 `S171 1 `S172 1 ]
+[n S169 . . . . ]
+"4470
+[v _ADCON1bits `VS169 ~T0 @X0 0 e@4033 ]
+"165 ./MCAL_LAYER/ADC/hal_adc.h
+[; ;./MCAL_LAYER/ADC/hal_adc.h: 165: Std_ReturnType ADC_Init(const adc_config_t *_adc);
+[v _ADC_Init `(uc ~T0 @X0 0 ef1`*CS275 ]
+"93 ./MCAL_LAYER/TIMER1/hal_timer1.h
+[; ;./MCAL_LAYER/TIMER1/hal_timer1.h: 93: Std_ReturnType Timer1_Init(const timer1_config_t *_timer);
+[v _Timer1_Init `(uc ~T0 @X0 0 ef1`*CS279 ]
+"87 ./MCAL_LAYER/SPI/hal_spi.h
+[; ;./MCAL_LAYER/SPI/hal_spi.h: 87: Std_ReturnType SPI_Init(const SPI_Config_t *_spi_obj);
+[v _SPI_Init `(uc ~T0 @X0 0 ef1`*CS278 ]
+"32 ./ECU_LAYER/led/ecu_led.h
+[; ;./ECU_LAYER/led/ecu_led.h: 32: Std_ReturnType led_initialize(const led_t *led);
+[v _led_initialize `(uc ~T0 @X0 0 ef1`*CS274 ]
+"96 ./MCAL_LAYER/SPI/hal_spi.h
+[; ;./MCAL_LAYER/SPI/hal_spi.h: 96: void u8SPITranmitRecieve(uint8 u8Data);
+[v _u8SPITranmitRecieve `(v ~T0 @X0 0 ef1`uc ]
+"536 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+"33 ./ECU_LAYER/led/ecu_led.h
+[; ;./ECU_LAYER/led/ecu_led.h: 33: Std_ReturnType led_turn_on(const led_t *led);
+[v _led_turn_on `(uc ~T0 @X0 0 ef1`*CS274 ]
+"34
+[; ;./ECU_LAYER/led/ecu_led.h: 34: Std_ReturnType led_turn_off(const led_t *led);
+[v _led_turn_off `(uc ~T0 @X0 0 ef1`*CS274 ]
+"100 ./MCAL_LAYER/TIMER1/hal_timer1.h
+[; ;./MCAL_LAYER/TIMER1/hal_timer1.h: 100: Std_ReturnType Timer1_DeInit(const timer1_config_t *_timer);
+[v _Timer1_DeInit `(uc ~T0 @X0 0 ef1`*CS279 ]
+"5030 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"22 ./application.h
+[; ;./application.h: 22: uint16 GetResultFromTheADC(void);
+[v _GetResultFromTheADC `(us ~T0 @X0 0 ef ]
+"226 ./MCAL_LAYER/ADC/hal_adc.h
+[; ;./MCAL_LAYER/ADC/hal_adc.h: 226: Std_ReturnType ADC_GetResultConversionBlocking(const adc_config_t *_adc , adc_channel_select_t Channel
+[v _ADC_GetResultConversionBlocking `(uc ~T0 @X0 0 ef3`*CS275`E3048`*us ]
+"2581 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
+[s S89 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2591
+[s S90 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S90 . . TX1IF RC1IF ]
+"2580
+[u S88 `S89 1 `S90 1 ]
+[n S88 . . . ]
+"2597
+[v _PIR1bits `VS88 ~T0 @X0 0 e@3998 ]
+"4808
+[s S188 :2 `uc 1 :1 `uc 1 ]
+[n S188 . . R_NOT_W ]
+"4812
+[s S189 :5 `uc 1 :1 `uc 1 ]
+[n S189 . . D_NOT_A ]
+"4816
+[s S190 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S190 . BF UA R_nW S P D_nA CKE SMP ]
+"4826
+[s S191 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S191 . . R . D ]
+"4832
+[s S192 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S192 . . W . A ]
+"4838
+[s S193 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S193 . . nW . nA ]
+"4844
+[s S194 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S194 . . R_W . D_A ]
+"4850
+[s S195 :2 `uc 1 :1 `uc 1 ]
+[n S195 . . NOT_WRITE ]
+"4854
+[s S196 :5 `uc 1 :1 `uc 1 ]
+[n S196 . . NOT_ADDRESS ]
+"4858
+[s S197 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S197 . . nWRITE . nADDRESS ]
+"4864
+[s S198 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S198 . . RW START STOP DA ]
+"4871
+[s S199 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S199 . . NOT_W . NOT_A ]
+"4807
+[u S187 `S188 1 `S189 1 `S190 1 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 `S196 1 `S197 1 `S198 1 `S199 1 ]
+[n S187 . . . . . . . . . . . . . ]
+"4878
+[v _SSPSTATbits `VS187 ~T0 @X0 0 e@4039 ]
+"55 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
+[; <" PORTA equ 0F80h ;# ">
+"192
+[; <" PORTB equ 0F81h ;# ">
+"363
+[; <" PORTC equ 0F82h ;# ">
+"538
+[; <" PORTD equ 0F83h ;# ">
+"680
+[; <" PORTE equ 0F84h ;# ">
+"883
+[; <" LATA equ 0F89h ;# ">
+"995
+[; <" LATB equ 0F8Ah ;# ">
+"1107
+[; <" LATC equ 0F8Bh ;# ">
+"1219
+[; <" LATD equ 0F8Ch ;# ">
+"1331
+[; <" LATE equ 0F8Dh ;# ">
+"1383
+[; <" TRISA equ 0F92h ;# ">
+"1388
+[; <" DDRA equ 0F92h ;# ">
+"1605
+[; <" TRISB equ 0F93h ;# ">
+"1610
+[; <" DDRB equ 0F93h ;# ">
+"1827
+[; <" TRISC equ 0F94h ;# ">
+"1832
+[; <" DDRC equ 0F94h ;# ">
+"2049
+[; <" TRISD equ 0F95h ;# ">
+"2054
+[; <" DDRD equ 0F95h ;# ">
+"2271
+[; <" TRISE equ 0F96h ;# ">
+"2276
+[; <" DDRE equ 0F96h ;# ">
+"2435
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2500
+[; <" PIE1 equ 0F9Dh ;# ">
+"2577
+[; <" PIR1 equ 0F9Eh ;# ">
+"2654
+[; <" IPR1 equ 0F9Fh ;# ">
+"2731
+[; <" PIE2 equ 0FA0h ;# ">
+"2797
+[; <" PIR2 equ 0FA1h ;# ">
+"2863
+[; <" IPR2 equ 0FA2h ;# ">
+"2929
+[; <" EECON1 equ 0FA6h ;# ">
+"2995
+[; <" EECON2 equ 0FA7h ;# ">
+"3002
+[; <" EEDATA equ 0FA8h ;# ">
+"3009
+[; <" EEADR equ 0FA9h ;# ">
+"3016
+[; <" EEADRH equ 0FAAh ;# ">
+"3023
+[; <" RCSTA equ 0FABh ;# ">
+"3028
+[; <" RCSTA1 equ 0FABh ;# ">
+"3233
+[; <" TXSTA equ 0FACh ;# ">
+"3238
+[; <" TXSTA1 equ 0FACh ;# ">
+"3489
+[; <" TXREG equ 0FADh ;# ">
+"3494
+[; <" TXREG1 equ 0FADh ;# ">
+"3501
+[; <" RCREG equ 0FAEh ;# ">
+"3506
+[; <" RCREG1 equ 0FAEh ;# ">
+"3513
+[; <" SPBRG equ 0FAFh ;# ">
+"3518
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3525
+[; <" SPBRGH equ 0FB0h ;# ">
+"3532
+[; <" T3CON equ 0FB1h ;# ">
+"3644
+[; <" TMR3 equ 0FB2h ;# ">
+"3651
+[; <" TMR3L equ 0FB2h ;# ">
+"3658
+[; <" TMR3H equ 0FB3h ;# ">
+"3665
+[; <" CMCON equ 0FB4h ;# ">
+"3755
+[; <" CVRCON equ 0FB5h ;# ">
+"3834
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3916
+[; <" PWM1CON equ 0FB7h ;# ">
+"3986
+[; <" BAUDCON equ 0FB8h ;# ">
+"3991
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4158
+[; <" CCP2CON equ 0FBAh ;# ">
+"4237
+[; <" CCPR2 equ 0FBBh ;# ">
+"4244
+[; <" CCPR2L equ 0FBBh ;# ">
+"4251
+[; <" CCPR2H equ 0FBCh ;# ">
+"4258
+[; <" CCP1CON equ 0FBDh ;# ">
+"4355
+[; <" CCPR1 equ 0FBEh ;# ">
+"4362
+[; <" CCPR1L equ 0FBEh ;# ">
+"4369
+[; <" CCPR1H equ 0FBFh ;# ">
+"4376
+[; <" ADCON2 equ 0FC0h ;# ">
+"4447
+[; <" ADCON1 equ 0FC1h ;# ">
+"4532
+[; <" ADCON0 equ 0FC2h ;# ">
+"4651
+[; <" ADRES equ 0FC3h ;# ">
+"4658
+[; <" ADRESL equ 0FC3h ;# ">
+"4665
+[; <" ADRESH equ 0FC4h ;# ">
+"4672
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4734
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4804
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5025
+[; <" SSPADD equ 0FC8h ;# ">
+"5032
+[; <" SSPBUF equ 0FC9h ;# ">
+"5039
+[; <" T2CON equ 0FCAh ;# ">
+"5110
+[; <" PR2 equ 0FCBh ;# ">
+"5115
+[; <" MEMCON equ 0FCBh ;# ">
+"5220
+[; <" TMR2 equ 0FCCh ;# ">
+"5227
+[; <" T1CON equ 0FCDh ;# ">
+"5330
+[; <" TMR1 equ 0FCEh ;# ">
+"5337
+[; <" TMR1L equ 0FCEh ;# ">
+"5344
+[; <" TMR1H equ 0FCFh ;# ">
+"5351
+[; <" RCON equ 0FD0h ;# ">
+"5484
+[; <" WDTCON equ 0FD1h ;# ">
+"5512
+[; <" HLVDCON equ 0FD2h ;# ">
+"5517
+[; <" LVDCON equ 0FD2h ;# ">
+"5782
+[; <" OSCCON equ 0FD3h ;# ">
+"5859
+[; <" T0CON equ 0FD5h ;# ">
+"5936
+[; <" TMR0 equ 0FD6h ;# ">
+"5943
+[; <" TMR0L equ 0FD6h ;# ">
+"5950
+[; <" TMR0H equ 0FD7h ;# ">
+"5957
+[; <" STATUS equ 0FD8h ;# ">
+"6028
+[; <" FSR2 equ 0FD9h ;# ">
+"6035
+[; <" FSR2L equ 0FD9h ;# ">
+"6042
+[; <" FSR2H equ 0FDAh ;# ">
+"6049
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6056
+[; <" PREINC2 equ 0FDCh ;# ">
+"6063
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6070
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6077
+[; <" INDF2 equ 0FDFh ;# ">
+"6084
+[; <" BSR equ 0FE0h ;# ">
+"6091
+[; <" FSR1 equ 0FE1h ;# ">
+"6098
+[; <" FSR1L equ 0FE1h ;# ">
+"6105
+[; <" FSR1H equ 0FE2h ;# ">
+"6112
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6119
+[; <" PREINC1 equ 0FE4h ;# ">
+"6126
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6133
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6140
+[; <" INDF1 equ 0FE7h ;# ">
+"6147
+[; <" WREG equ 0FE8h ;# ">
+"6159
+[; <" FSR0 equ 0FE9h ;# ">
+"6166
+[; <" FSR0L equ 0FE9h ;# ">
+"6173
+[; <" FSR0H equ 0FEAh ;# ">
+"6180
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6187
+[; <" PREINC0 equ 0FECh ;# ">
+"6194
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6201
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6208
+[; <" INDF0 equ 0FEFh ;# ">
+"6215
+[; <" INTCON3 equ 0FF0h ;# ">
+"6307
+[; <" INTCON2 equ 0FF1h ;# ">
+"6377
+[; <" INTCON equ 0FF2h ;# ">
+"6494
+[; <" PROD equ 0FF3h ;# ">
+"6501
+[; <" PRODL equ 0FF3h ;# ">
+"6508
+[; <" PRODH equ 0FF4h ;# ">
+"6515
+[; <" TABLAT equ 0FF5h ;# ">
+"6524
+[; <" TBLPTR equ 0FF6h ;# ">
+"6531
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6538
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6545
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6554
+[; <" PCLAT equ 0FF9h ;# ">
+"6561
+[; <" PC equ 0FF9h ;# ">
+"6568
+[; <" PCL equ 0FF9h ;# ">
+"6575
+[; <" PCLATH equ 0FFAh ;# ">
+"6582
+[; <" PCLATU equ 0FFBh ;# ">
+"6589
+[; <" STKPTR equ 0FFCh ;# ">
+"6695
+[; <" TOS equ 0FFDh ;# ">
+"6702
+[; <" TOSL equ 0FFDh ;# ">
+"6709
+[; <" TOSH equ 0FFEh ;# ">
+"6716
+[; <" TOSU equ 0FFFh ;# ">
+"33 ./application.h
+[; ;./application.h: 33: led_t Room1_Led={.port=PORTD_INDEX,.pin=GPIO_PIN0,.status=LED_OFF};
+[v _Room1_Led `S274 ~T0 @X0 1 e ]
+[i _Room1_Led
+:U ..
+:U ..
+-> . `E2983 3 `uc
+-> . `E2973 0 `uc
+-> . `E3027 0 `uc
+..
+..
+]
+"34
+[; ;./application.h: 34: led_t Room2_Led={.port=PORTD_INDEX,.pin=GPIO_PIN1,.status=LED_OFF};
+[v _Room2_Led `S274 ~T0 @X0 1 e ]
+[i _Room2_Led
+:U ..
+:U ..
+-> . `E2983 3 `uc
+-> . `E2973 1 `uc
+-> . `E3027 0 `uc
+..
+..
+]
+"35
+[; ;./application.h: 35: led_t Room3_Led={.port=PORTD_INDEX,.pin=GPIO_PIN2,.status=LED_OFF};
+[v _Room3_Led `S274 ~T0 @X0 1 e ]
+[i _Room3_Led
+:U ..
+:U ..
+-> . `E2983 3 `uc
+-> . `E2973 2 `uc
+-> . `E3027 0 `uc
+..
+..
+]
+"36
+[; ;./application.h: 36: led_t Room4_Led={.port=PORTD_INDEX,.pin=GPIO_PIN3,.status=LED_OFF};
+[v _Room4_Led `S274 ~T0 @X0 1 e ]
+[i _Room4_Led
+:U ..
+:U ..
+-> . `E2983 3 `uc
+-> . `E2973 3 `uc
+-> . `E3027 0 `uc
+..
+..
+]
+"37
+[; ;./application.h: 37: led_t TV_Led={.port=PORTD_INDEX,.pin=GPIO_PIN4,.status=LED_OFF};
+[v _TV_Led `S274 ~T0 @X0 1 e ]
+[i _TV_Led
+:U ..
+:U ..
+-> . `E2983 3 `uc
+-> . `E2973 4 `uc
+-> . `E3027 0 `uc
+..
+..
+]
+"38
+[; ;./application.h: 38: led_t AIR_COND_Led={.port=PORTD_INDEX,.pin=GPIO_PIN5,.status=LED_OFF};
+[v _AIR_COND_Led `S274 ~T0 @X0 1 e ]
+[i _AIR_COND_Led
+:U ..
+:U ..
+-> . `E2983 3 `uc
+-> . `E2973 5 `uc
+-> . `E3027 0 `uc
+..
+..
+]
+"41
+[; ;./application.h: 41: SPI_Config_t SPIObject={.SPI_InterruptHandler=SPI_InterrutHandler,.SPI_mode=SPI_SLAVE_MODE_SS_BIN_ENABLED,
+[v _SPIObject `S278 ~T0 @X0 1 e ]
+[i _SPIObject
+:U ..
+:U ..
+&U _SPI_InterrutHandler
+-> . `E3150 4 `uc
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+..
+..
+..
+..
+]
+"48
+[; ;./application.h: 48: timer1_config_t Timer1Obj={.TIMER1_HandlerInterrupt=Timer1Handler,.preloaded_value=45536,
+[v _Timer1Obj `S279 ~T0 @X0 1 e ]
+[i _Timer1Obj
+:U ..
+:U ..
+&U _Timer1Handler
+-> -> 45536 `l `us
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+..
+..
+]
+"55
+[; ;./application.h: 55: adc_config_t ADC_Obj={.ADC_HandlerInterrupt=((void*)0),.adc_channel=ADC_CHANNEL_AN0,
+[v _ADC_Obj `S275 ~T0 @X0 1 e ]
+[i _ADC_Obj
+:U ..
+:U ..
+-> -> -> 0 `i `*v `*F3220
+. `E3048 0
+. `E3063 5
+. `E3073 4
+-> -> 0 `ui `uc
+-> -> 1 `ui `uc
+..
+..
+]
+"13 application.c
+[; ;application.c: 13: volatile uint16 u16RequiredTemperature=24;
+[v _u16RequiredTemperature `Vus ~T0 @X0 1 e ]
+[i _u16RequiredTemperature
+-> -> 24 `i `us
+]
+"14
+[; ;application.c: 14: volatile uint16 u16ReadingCounter=0;
+[v _u16ReadingCounter `Vus ~T0 @X0 1 e ]
+[i _u16ReadingCounter
+-> -> 0 `i `us
+]
+"15
+[; ;application.c: 15: volatile uint16 u16TempSensorReading=0;
+[v _u16TempSensorReading `Vus ~T0 @X0 1 e ]
+[i _u16TempSensorReading
+-> -> 0 `i `us
+]
+"16
+[; ;application.c: 16: volatile uint16 u16LastValueAirCondtioning=(uint8)0X00;
+[v _u16LastValueAirCondtioning `Vus ~T0 @X0 1 e ]
+[i _u16LastValueAirCondtioning
+-> -> -> 0 `i `uc `us
+]
+"18
+[; ;application.c: 18: volatile uint8 u8Request=0XFF;
+[v _u8Request `Vuc ~T0 @X0 1 e ]
+[i _u8Request
+-> -> 255 `i `uc
+]
+"19
+[; ;application.c: 19: volatile uint8 u8Response=0XFF;
+[v _u8Response `Vuc ~T0 @X0 1 e ]
+[i _u8Response
+-> -> 255 `i `uc
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"20
+[; ;application.c: 20: int main(void){
+[v _main `(i ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"21
+[; ;application.c: 21:     ADCON1bits.PCFG=1110;
+[e = . . _ADCON1bits 0 0 -> -> 1110 `i `uc ]
+"22
+[; ;application.c: 22:     ADC_Init(&ADC_Obj);
+[e ( _ADC_Init (1 -> &U _ADC_Obj `*CS275 ]
+"23
+[; ;application.c: 23:     Timer1_Init(&Timer1Obj);
+[e ( _Timer1_Init (1 -> &U _Timer1Obj `*CS279 ]
+"24
+[; ;application.c: 24:     SPI_Init(&SPIObject);
+[e ( _SPI_Init (1 -> &U _SPIObject `*CS278 ]
+"25
+[; ;application.c: 25:     led_initialize(&Room1_Led);
+[e ( _led_initialize (1 -> &U _Room1_Led `*CS274 ]
+"26
+[; ;application.c: 26:     led_initialize(&Room2_Led);
+[e ( _led_initialize (1 -> &U _Room2_Led `*CS274 ]
+"27
+[; ;application.c: 27:     led_initialize(&Room3_Led);
+[e ( _led_initialize (1 -> &U _Room3_Led `*CS274 ]
+"28
+[; ;application.c: 28:     led_initialize(&Room4_Led);
+[e ( _led_initialize (1 -> &U _Room4_Led `*CS274 ]
+"29
+[; ;application.c: 29:     led_initialize(&TV_Led);
+[e ( _led_initialize (1 -> &U _TV_Led `*CS274 ]
+"30
+[; ;application.c: 30:     led_initialize(&AIR_COND_Led);
+[e ( _led_initialize (1 -> &U _AIR_COND_Led `*CS274 ]
+"31
+[; ;application.c: 31:     while(1){
+[e :U 282 ]
+{
+"32
+[; ;application.c: 32:         u8SPITranmitRecieve(u8Response);
+[e ( _u8SPITranmitRecieve (1 _u8Response ]
+"33
+[; ;application.c: 33:         switch(u8Request){
+[e $U 285  ]
+{
+"36
+[; ;application.c: 36:             case 0X11:
+[e :U 286 ]
+"37
+[; ;application.c: 37:                 if((((PORTD >> 0) & (uint8)1))==1){
+[e $ ! == & >> -> _PORTD `i -> 0 `i -> -> -> 1 `i `uc `i -> 1 `i 287  ]
+{
+"38
+[; ;application.c: 38:                     u8Response=0X01;
+[e = _u8Response -> -> 1 `i `uc ]
+"39
+[; ;application.c: 39:                 }
+}
+[e $U 288  ]
+"40
+[; ;application.c: 40:                 else if((((PORTD >> 0) & (uint8)1))==0){
+[e :U 287 ]
+[e $ ! == & >> -> _PORTD `i -> 0 `i -> -> -> 1 `i `uc `i -> 0 `i 289  ]
+{
+"41
+[; ;application.c: 41:                     u8Response=0X00;
+[e = _u8Response -> -> 0 `i `uc ]
+"42
+[; ;application.c: 42:                 }
+}
+[e $U 290  ]
+"43
+[; ;application.c: 43:                 else {}
+[e :U 289 ]
+{
+}
+[e :U 290 ]
+[e :U 288 ]
+"45
+[; ;application.c: 45:                 break;
+[e $U 284  ]
+"46
+[; ;application.c: 46:             case 0X12:
+[e :U 291 ]
+"47
+[; ;application.c: 47:                 if((((PORTD >> 1) & (uint8)1))==1){
+[e $ ! == & >> -> _PORTD `i -> 1 `i -> -> -> 1 `i `uc `i -> 1 `i 292  ]
+{
+"48
+[; ;application.c: 48:                     u8Response=0X01;
+[e = _u8Response -> -> 1 `i `uc ]
+"49
+[; ;application.c: 49:                 }
+}
+[e $U 293  ]
+"50
+[; ;application.c: 50:                 else if((((PORTD >> 1) & (uint8)1))==0){
+[e :U 292 ]
+[e $ ! == & >> -> _PORTD `i -> 1 `i -> -> -> 1 `i `uc `i -> 0 `i 294  ]
+{
+"51
+[; ;application.c: 51:                     u8Response=0X00;
+[e = _u8Response -> -> 0 `i `uc ]
+"52
+[; ;application.c: 52:                 }
+}
+[e $U 295  ]
+"53
+[; ;application.c: 53:                 else {}
+[e :U 294 ]
+{
+}
+[e :U 295 ]
+[e :U 293 ]
+"55
+[; ;application.c: 55:                 break;
+[e $U 284  ]
+"56
+[; ;application.c: 56:             case 0X13:
+[e :U 296 ]
+"57
+[; ;application.c: 57:                 if((((PORTD >> 2) & (uint8)1))==1){
+[e $ ! == & >> -> _PORTD `i -> 2 `i -> -> -> 1 `i `uc `i -> 1 `i 297  ]
+{
+"58
+[; ;application.c: 58:                     u8Response=0X01;
+[e = _u8Response -> -> 1 `i `uc ]
+"59
+[; ;application.c: 59:                 }
+}
+[e $U 298  ]
+"60
+[; ;application.c: 60:                 else if((((PORTD >> 2) & (uint8)1))==0){
+[e :U 297 ]
+[e $ ! == & >> -> _PORTD `i -> 2 `i -> -> -> 1 `i `uc `i -> 0 `i 299  ]
+{
+"61
+[; ;application.c: 61:                     u8Response=0X00;
+[e = _u8Response -> -> 0 `i `uc ]
+"62
+[; ;application.c: 62:                 }
+}
+[e $U 300  ]
+"63
+[; ;application.c: 63:                 else {}
+[e :U 299 ]
+{
+}
+[e :U 300 ]
+[e :U 298 ]
+"65
+[; ;application.c: 65:                 break;
+[e $U 284  ]
+"66
+[; ;application.c: 66:             case 0X14:
+[e :U 301 ]
+"67
+[; ;application.c: 67:                 if((((PORTD >> 3) & (uint8)1))==1){
+[e $ ! == & >> -> _PORTD `i -> 3 `i -> -> -> 1 `i `uc `i -> 1 `i 302  ]
+{
+"68
+[; ;application.c: 68:                     u8Response=0X01;
+[e = _u8Response -> -> 1 `i `uc ]
+"69
+[; ;application.c: 69:                 }
+}
+[e $U 303  ]
+"70
+[; ;application.c: 70:                 else if((((PORTD >> 3) & (uint8)1))==0){
+[e :U 302 ]
+[e $ ! == & >> -> _PORTD `i -> 3 `i -> -> -> 1 `i `uc `i -> 0 `i 304  ]
+{
+"71
+[; ;application.c: 71:                     u8Response=0X00;
+[e = _u8Response -> -> 0 `i `uc ]
+"72
+[; ;application.c: 72:                 }
+}
+[e $U 305  ]
+"73
+[; ;application.c: 73:                 else {}
+[e :U 304 ]
+{
+}
+[e :U 305 ]
+[e :U 303 ]
+"75
+[; ;application.c: 75:                 break;
+[e $U 284  ]
+"76
+[; ;application.c: 76:             case 0X15:
+[e :U 306 ]
+"77
+[; ;application.c: 77:                 if((((PORTD >> 4) & (uint8)1))==1){
+[e $ ! == & >> -> _PORTD `i -> 4 `i -> -> -> 1 `i `uc `i -> 1 `i 307  ]
+{
+"78
+[; ;application.c: 78:                     u8Response=0X01;
+[e = _u8Response -> -> 1 `i `uc ]
+"79
+[; ;application.c: 79:                 }
+}
+[e $U 308  ]
+"80
+[; ;application.c: 80:                 else if((((PORTD >> 4) & (uint8)1))==0){
+[e :U 307 ]
+[e $ ! == & >> -> _PORTD `i -> 4 `i -> -> -> 1 `i `uc `i -> 0 `i 309  ]
+{
+"81
+[; ;application.c: 81:                     u8Response=0X00;
+[e = _u8Response -> -> 0 `i `uc ]
+"82
+[; ;application.c: 82:                 }
+}
+[e $U 310  ]
+"83
+[; ;application.c: 83:                 else {}
+[e :U 309 ]
+{
+}
+[e :U 310 ]
+[e :U 308 ]
+"85
+[; ;application.c: 85:                 break;
+[e $U 284  ]
+"86
+[; ;application.c: 86:             case 0X16:
+[e :U 311 ]
+"87
+[; ;application.c: 87:                 if((((PORTD >> 5) & (uint8)1))==1){
+[e $ ! == & >> -> _PORTD `i -> 5 `i -> -> -> 1 `i `uc `i -> 1 `i 312  ]
+{
+"88
+[; ;application.c: 88:                     u8Response=0X01;
+[e = _u8Response -> -> 1 `i `uc ]
+"89
+[; ;application.c: 89:                 }
+}
+[e $U 313  ]
+"90
+[; ;application.c: 90:                 else if((((PORTD >> 5) & (uint8)1))==0){
+[e :U 312 ]
+[e $ ! == & >> -> _PORTD `i -> 5 `i -> -> -> 1 `i `uc `i -> 0 `i 314  ]
+{
+"91
+[; ;application.c: 91:                     u8Response=0X00;
+[e = _u8Response -> -> 0 `i `uc ]
+"92
+[; ;application.c: 92:                 }
+}
+[e $U 315  ]
+"93
+[; ;application.c: 93:                 else {}
+[e :U 314 ]
+{
+}
+[e :U 315 ]
+[e :U 313 ]
+"95
+[; ;application.c: 95:                 break;
+[e $U 284  ]
+"98
+[; ;application.c: 98:             case 0X21:
+[e :U 316 ]
+"99
+[; ;application.c: 99:                 led_turn_on(&Room1_Led);
+[e ( _led_turn_on (1 -> &U _Room1_Led `*CS274 ]
+"100
+[; ;application.c: 100:                 break;
+[e $U 284  ]
+"101
+[; ;application.c: 101:             case 0X22:
+[e :U 317 ]
+"102
+[; ;application.c: 102:                 led_turn_on(&Room2_Led);
+[e ( _led_turn_on (1 -> &U _Room2_Led `*CS274 ]
+"103
+[; ;application.c: 103:                 break;
+[e $U 284  ]
+"104
+[; ;application.c: 104:             case 0X23:
+[e :U 318 ]
+"105
+[; ;application.c: 105:                 led_turn_on(&Room3_Led);
+[e ( _led_turn_on (1 -> &U _Room3_Led `*CS274 ]
+"106
+[; ;application.c: 106:                 break;
+[e $U 284  ]
+"107
+[; ;application.c: 107:             case 0X24:
+[e :U 319 ]
+"108
+[; ;application.c: 108:                 led_turn_on(&Room4_Led);
+[e ( _led_turn_on (1 -> &U _Room4_Led `*CS274 ]
+"109
+[; ;application.c: 109:                 break;
+[e $U 284  ]
+"110
+[; ;application.c: 110:             case 0X25:
+[e :U 320 ]
+"111
+[; ;application.c: 111:                 led_turn_on(&TV_Led);
+[e ( _led_turn_on (1 -> &U _TV_Led `*CS274 ]
+"112
+[; ;application.c: 112:                 break;
+[e $U 284  ]
+"113
+[; ;application.c: 113:             case 0X26:
+[e :U 321 ]
+"114
+[; ;application.c: 114:                 Timer1_Init(&Timer1Obj);
+[e ( _Timer1_Init (1 -> &U _Timer1Obj `*CS279 ]
+"115
+[; ;application.c: 115:                 led_turn_on(&AIR_COND_Led);
+[e ( _led_turn_on (1 -> &U _AIR_COND_Led `*CS274 ]
+"116
+[; ;application.c: 116:                 break;
+[e $U 284  ]
+"118
+[; ;application.c: 118:             case 0X31:
+[e :U 322 ]
+"119
+[; ;application.c: 119:                 led_turn_off(&Room1_Led);
+[e ( _led_turn_off (1 -> &U _Room1_Led `*CS274 ]
+"120
+[; ;application.c: 120:                 break;
+[e $U 284  ]
+"121
+[; ;application.c: 121:             case 0X32:
+[e :U 323 ]
+"122
+[; ;application.c: 122:                 led_turn_off(&Room2_Led);
+[e ( _led_turn_off (1 -> &U _Room2_Led `*CS274 ]
+"123
+[; ;application.c: 123:                 break;
+[e $U 284  ]
+"124
+[; ;application.c: 124:             case 0X33:
+[e :U 324 ]
+"125
+[; ;application.c: 125:                 led_turn_off(&Room3_Led);
+[e ( _led_turn_off (1 -> &U _Room3_Led `*CS274 ]
+"126
+[; ;application.c: 126:                 break;
+[e $U 284  ]
+"127
+[; ;application.c: 127:             case 0X34:
+[e :U 325 ]
+"128
+[; ;application.c: 128:                 led_turn_off(&Room4_Led);
+[e ( _led_turn_off (1 -> &U _Room4_Led `*CS274 ]
+"129
+[; ;application.c: 129:                 break;
+[e $U 284  ]
+"130
+[; ;application.c: 130:             case 0X35:
+[e :U 326 ]
+"131
+[; ;application.c: 131:                 led_turn_off(&TV_Led);
+[e ( _led_turn_off (1 -> &U _TV_Led `*CS274 ]
+"132
+[; ;application.c: 132:                 break;
+[e $U 284  ]
+"133
+[; ;application.c: 133:             case 0X36:
+[e :U 327 ]
+"134
+[; ;application.c: 134:                 Timer1_DeInit(&Timer1Obj);
+[e ( _Timer1_DeInit (1 -> &U _Timer1Obj `*CS279 ]
+"135
+[; ;application.c: 135:                 led_turn_off(&AIR_COND_Led);
+[e ( _led_turn_off (1 -> &U _AIR_COND_Led `*CS274 ]
+"136
+[; ;application.c: 136:                 break;
+[e $U 284  ]
+"137
+[; ;application.c: 137:             case 0X40:
+[e :U 328 ]
+"138
+[; ;application.c: 138:                 u16RequiredTemperature=SSPBUF;
+[e = _u16RequiredTemperature -> _SSPBUF `us ]
+"139
+[; ;application.c: 139:                 break;
+[e $U 284  ]
+"140
+[; ;application.c: 140:         }
+}
+[e $U 284  ]
+[e :U 285 ]
+[e [\ -> _u8Request `i , $ -> 17 `i 286
+ , $ -> 18 `i 291
+ , $ -> 19 `i 296
+ , $ -> 20 `i 301
+ , $ -> 21 `i 306
+ , $ -> 22 `i 311
+ , $ -> 33 `i 316
+ , $ -> 34 `i 317
+ , $ -> 35 `i 318
+ , $ -> 36 `i 319
+ , $ -> 37 `i 320
+ , $ -> 38 `i 321
+ , $ -> 49 `i 322
+ , $ -> 50 `i 323
+ , $ -> 51 `i 324
+ , $ -> 52 `i 325
+ , $ -> 53 `i 326
+ , $ -> 54 `i 327
+ , $ -> 64 `i 328
+ 284 ]
+[e :U 284 ]
+"141
+[; ;application.c: 141:         }
+}
+[e :U 281 ]
+[e $U 282  ]
+[e :U 283 ]
+"142
+[; ;application.c: 142:     return (0);
+[e ) -> 0 `i ]
+[e $UE 280  ]
+"143
+[; ;application.c: 143: }
+[e :UE 280 ]
+}
+"145
+[; ;application.c: 145: void Timer1Handler(void){
+[v _Timer1Handler `(v ~T0 @X0 1 ef ]
+{
+[e :U _Timer1Handler ]
+[f ]
+"146
+[; ;application.c: 146:     u16ReadingCounter++;
+[e ++ _u16ReadingCounter -> -> 1 `i `Vus ]
+"147
+[; ;application.c: 147:     if(u16ReadingCounter >= 10){
+[e $ ! >= -> _u16ReadingCounter `ui -> -> 10 `i `ui 330  ]
+{
+"148
+[; ;application.c: 148:         u16ReadingCounter=0;
+[e = _u16ReadingCounter -> -> 0 `i `us ]
+"149
+[; ;application.c: 149:         u16TempSensorReading=(0.5*GetResultFromTheADC());
+[e = _u16TempSensorReading -> * .0.5 -> -> ( _GetResultFromTheADC ..  `ui `d `us ]
+"150
+[; ;application.c: 150:         if(u16TempSensorReading >= (u16RequiredTemperature+1)){
+[e $ ! >= -> _u16TempSensorReading `ui + -> _u16RequiredTemperature `ui -> -> 1 `i `ui 331  ]
+{
+"151
+[; ;application.c: 151:             led_turn_on(&AIR_COND_Led);
+[e ( _led_turn_on (1 -> &U _AIR_COND_Led `*CS274 ]
+"152
+[; ;application.c: 152:             u16LastValueAirCondtioning=(uint8)0X01;
+[e = _u16LastValueAirCondtioning -> -> -> 1 `i `uc `us ]
+"153
+[; ;application.c: 153:         }
+}
+[e $U 332  ]
+"154
+[; ;application.c: 154:         else if(u16TempSensorReading <= (u16RequiredTemperature-1)){
+[e :U 331 ]
+[e $ ! <= -> _u16TempSensorReading `ui - -> _u16RequiredTemperature `ui -> -> 1 `i `ui 333  ]
+{
+"155
+[; ;application.c: 155:             led_turn_off(&AIR_COND_Led);
+[e ( _led_turn_off (1 -> &U _AIR_COND_Led `*CS274 ]
+"156
+[; ;application.c: 156:             u16LastValueAirCondtioning=(uint8)0X00 ;
+[e = _u16LastValueAirCondtioning -> -> -> 0 `i `uc `us ]
+"157
+[; ;application.c: 157:         }
+}
+[e $U 334  ]
+"158
+[; ;application.c: 158:         else if(u16TempSensorReading == (u16RequiredTemperature+1)){
+[e :U 333 ]
+[e $ ! == -> _u16TempSensorReading `ui + -> _u16RequiredTemperature `ui -> -> 1 `i `ui 335  ]
+{
+"159
+[; ;application.c: 159:             if(u16LastValueAirCondtioning==(uint8)0X01){
+[e $ ! == -> _u16LastValueAirCondtioning `ui -> -> -> 1 `i `uc `ui 336  ]
+{
+"160
+[; ;application.c: 160:                 led_turn_on(&AIR_COND_Led);
+[e ( _led_turn_on (1 -> &U _AIR_COND_Led `*CS274 ]
+"161
+[; ;application.c: 161:             }
+}
+[e $U 337  ]
+"162
+[; ;application.c: 162:             else if(u16LastValueAirCondtioning==(uint8)0X00){
+[e :U 336 ]
+[e $ ! == -> _u16LastValueAirCondtioning `ui -> -> -> 0 `i `uc `ui 338  ]
+{
+"163
+[; ;application.c: 163:                 led_turn_off(&AIR_COND_Led);
+[e ( _led_turn_off (1 -> &U _AIR_COND_Led `*CS274 ]
+"164
+[; ;application.c: 164:             }
+}
+[e :U 338 ]
+[e :U 337 ]
+"165
+[; ;application.c: 165:         }
+}
+[e :U 335 ]
+[e :U 334 ]
+[e :U 332 ]
+"167
+[; ;application.c: 167:     }
+}
+[e :U 330 ]
+"168
+[; ;application.c: 168: }
+[e :UE 329 ]
+}
+"170
+[; ;application.c: 170: uint16 GetResultFromTheADC(void){
+[v _GetResultFromTheADC `(us ~T0 @X0 1 ef ]
+{
+[e :U _GetResultFromTheADC ]
+[f ]
+"171
+[; ;application.c: 171:     uint16 u16LOC_ResultConversion;
+[v _u16LOC_ResultConversion `us ~T0 @X0 1 a ]
+"172
+[; ;application.c: 172:     ADC_GetResultConversionBlocking(&ADC_Obj,ADC_CHANNEL_AN0,&u16LOC_ResultConversion);
+[e ( _ADC_GetResultConversionBlocking (3 , , -> &U _ADC_Obj `*CS275 . `E3048 0 &U _u16LOC_ResultConversion ]
+"173
+[; ;application.c: 173:     return u16LOC_ResultConversion;
+[e ) _u16LOC_ResultConversion ]
+[e $UE 339  ]
+"174
+[; ;application.c: 174: }
+[e :UE 339 ]
+}
+"176
+[; ;application.c: 176: void SPI_InterrutHandler(void){
+[v _SPI_InterrutHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _SPI_InterrutHandler ]
+[f ]
+"177
+[; ;application.c: 177:     (PIR1bits.SSPIF=0);
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"178
+[; ;application.c: 178:     while(SSPSTATbits.BF==0);
+[e $U 341  ]
+[e :U 342 ]
+[e :U 341 ]
+[e $ == -> . . _SSPSTATbits 2 0 `i -> 0 `i 342  ]
+[e :U 343 ]
+"179
+[; ;application.c: 179:     u8Request=SSPBUF;
+[e = _u8Request _SSPBUF ]
+"180
+[; ;application.c: 180: }
+[e :UE 340 ]
+}
